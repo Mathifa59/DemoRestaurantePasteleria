@@ -72,7 +72,7 @@ export default function OrderCTA() {
             {[
               {
                 icon: Phone,
-                title: "+56 9 1234 5678",
+                title: "+51 1 234 5678",
                 desc: "WhatsApp directo",
               },
               {
@@ -82,7 +82,7 @@ export default function OrderCTA() {
               },
               {
                 icon: MapPin,
-                title: "Providencia, Santiago",
+                title: "Miraflores, Lima",
                 desc: "Retiro en tienda o delivery",
               },
             ].map((info) => (

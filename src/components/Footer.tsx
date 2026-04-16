@@ -20,7 +20,7 @@ export default function Footer() {
                   Maison Délice
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-body">
-                  Pâtisserie de Autor
+                  Pastelería de Autor
                 </span>
               </div>
             </div>
@@ -70,10 +70,10 @@ export default function Footer() {
               Contacto
             </h4>
             <ul className="space-y-3 text-sm font-body text-white/50">
-              <li>+56 9 1234 5678</li>
-              <li>hola@maisondelice.cl</li>
-              <li>Av. Providencia 1234</li>
-              <li>Santiago, Chile</li>
+              <li>+51 1 234 5678</li>
+              <li>hola@maisondelice.pe</li>
+              <li>Av. La Mar 1234, Miraflores</li>
+              <li>Lima, Perú</li>
             </ul>
           </div>
         </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Maison Délice — Pâtisserie de Autor",
+  title: "Maison Délice — Pastelería de Autor",
   description:
     "Pastelería boutique de autor. Creaciones artesanales elaboradas con ingredientes selectos y técnica francesa contemporánea.",
 };

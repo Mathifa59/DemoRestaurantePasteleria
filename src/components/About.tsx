@@ -71,7 +71,7 @@ export default function About() {
             <div className="mt-10 space-y-6">
               <p className="text-muted font-body font-light text-base leading-relaxed">
                 Maison Délice nació de un sueño: traer la esencia de la
-                pâtisserie parisina a nuestra ciudad, sin perder la calidez de
+                pastelería parisina a nuestra ciudad, sin perder la calidez de
                 lo hecho a mano. Cada mañana, nuestro equipo transforma
                 ingredientes selectos en pequeñas obras de arte.
               </p>

@@ -11,7 +11,7 @@ const images = [
     height: "h-80 md:h-full",
   },
   {
-    src: "https://images.unsplash.com/photo-1486427944544-d2c246c4df14?w=600&q=80",
+    src: "https://images.unsplash.com/photo-1509461399763-ae67a981b254?w=600&q=80",
     alt: "Chocolate croissants",
     span: "",
     height: "h-64",

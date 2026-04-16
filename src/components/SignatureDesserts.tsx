@@ -69,7 +69,7 @@ export default function SignatureDesserts() {
             Nuestras Estrellas
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary">
-            Creaciones <span className="italic">Signature</span>
+            Creaciones <span className="italic">Exclusivas</span>
           </h2>
           <p className="mt-6 text-muted font-body font-light text-lg max-w-2xl mx-auto leading-relaxed">
             Cada pieza es una obra de arte comestible, elaborada con pasión y los

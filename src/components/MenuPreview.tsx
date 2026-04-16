@@ -1,50 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Leaf } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Star, Sparkles, ChefHat, Heart, Gift } from "lucide-react";
+import { menuItems, formatPrice, type HighlightLabel } from "@/data/menuData";
 
-const categories = [
-  {
-    name: "Tartas & Tartaletas",
-    items: [
-      { name: "Tarte au Citron Meringuée", price: "$9.800", note: "Merengue italiano" },
-      { name: "Tarte Tatin Classique", price: "$10.500", note: "Manzanas caramelizadas" },
-      { name: "Tarte Framboise Royale", price: "$12.500", note: "Vainilla de Madagascar", popular: true },
-      { name: "Tarte Chocolat Noir", price: "$11.200", note: "Chocolate 72% cacao" },
-    ],
-  },
-  {
-    name: "Éclairs & Choux",
-    items: [
-      { name: "Éclair Caramel Beurre Salé", price: "$8.900", note: "Caramelo bretón", popular: true },
-      { name: "Éclair Vanille Tonka", price: "$8.500", note: "Haba tonka" },
-      { name: "Paris-Brest", price: "$9.200", note: "Praliné de avellanas" },
-      { name: "Religieuse au Café", price: "$7.800", note: "Café arábica" },
-    ],
-  },
-  {
-    name: "Entremets & Mousses",
-    items: [
-      { name: "Entremet Passion & Coco", price: "$16.200", note: "Mousse exótica", popular: true },
-      { name: "Opéra Classique", price: "$14.800", note: "Chocolate & café" },
-      { name: "Fraisier de Saison", price: "$15.500", note: "Fresas de temporada" },
-      { name: "Mousse Chocolat Blanc & Yuzu", price: "$13.900", note: "Cítrico japonés" },
-    ],
-  },
-];
+const badgeConfig: Record<HighlightLabel, { bg: string; icon: React.ReactNode }> = {
+  "Best seller": { bg: "bg-delicate/50", icon: <Star size={10} className="fill-current" /> },
+  "Edición limitada": { bg: "bg-card/50", icon: <Sparkles size={10} /> },
+  "Chef's creation": { bg: "bg-warm/50", icon: <ChefHat size={10} /> },
+  "Favorito": { bg: "bg-accent/15", icon: <Heart size={10} className="fill-current" /> },
+  "Ideal para regalo": { bg: "bg-card/50", icon: <Gift size={10} /> },
+};
+
+// Mostrar solo los productos destacados como preview
+const previewItems = menuItems.filter((item) => item.featured).slice(0, 6);
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
-  },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 export default function MenuPreview() {
@@ -56,96 +36,92 @@ export default function MenuPreview() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-20"
         >
           <span className="inline-block text-xs font-body font-medium tracking-[0.3em] uppercase text-accent mb-4">
             La Carta
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary">
-            Nuestra <span className="italic">Carte</span>
+            Nuestra <span className="italic">Carta</span>
           </h2>
-          <p className="mt-6 text-muted font-body font-light text-lg max-w-2xl mx-auto">
-            Una selección cuidada de nuestras creaciones más emblemáticas.
+          <p className="mt-6 text-muted font-body font-light text-lg max-w-2xl mx-auto leading-relaxed">
+            Postres hechos a mano, pensados para celebrar lo cotidiano. Sabores
+            delicados, ingredientes nobles y una vitrina creada para enamorar a
+            primera vista.
           </p>
         </motion.div>
 
-        {/* Menu grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {categories.map((cat, ci) => (
-            <motion.div
-              key={cat.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.7,
-                delay: ci * 0.15,
-                ease: [0.22, 1, 0.36, 1] as const,
-              }}
-              className="bg-white rounded-3xl p-8 shadow-[0_4px_40px_rgba(139,94,74,0.06)]"
+        {/* Preview grid — solo productos destacados */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
+          {previewItems.map((item) => (
+            <motion.article
+              key={item.name}
+              variants={itemVariants}
+              className="group bg-white rounded-3xl overflow-hidden shadow-[0_4px_30px_rgba(139,94,74,0.06)] hover:shadow-[0_12px_40px_rgba(139,94,74,0.12)] transition-all duration-500 hover:-translate-y-1"
             >
-              {/* Category name */}
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-full bg-card/60 flex items-center justify-center">
-                  <Leaf size={16} className="text-accent" />
+              <div className="relative h-52 sm:h-56 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+
+                {item.highlightLabel && (
+                  <div className="absolute top-4 left-4">
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-body font-medium text-primary backdrop-blur-sm ${badgeConfig[item.highlightLabel].bg}`}>
+                      {badgeConfig[item.highlightLabel].icon}
+                      {item.highlightLabel}
+                    </span>
+                  </div>
+                )}
+
+                <div className="absolute top-4 right-4">
+                  <span className="px-3.5 py-1.5 rounded-full bg-primary/85 backdrop-blur-sm text-white text-sm font-body font-semibold">
+                    {formatPrice(item.price)}
+                  </span>
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-primary">
-                  {cat.name}
-                </h3>
               </div>
 
-              {/* Items */}
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="space-y-0"
-              >
-                {cat.items.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    variants={itemVariants}
-                    className="group py-5 border-b border-primary/5 last:border-b-0"
-                  >
-                    <div className="flex justify-between items-start gap-4">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <h4 className="font-body font-medium text-primary text-sm group-hover:text-hover transition-colors duration-300">
-                            {item.name}
-                          </h4>
-                          {item.popular && (
-                            <span className="px-2 py-0.5 text-[10px] font-body font-medium bg-delicate/50 text-primary rounded-full">
-                              Popular
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-xs text-muted/70 font-body mt-1">
-                          {item.note}
-                        </p>
-                      </div>
-                      <span className="font-body font-semibold text-sm text-primary whitespace-nowrap">
-                        {item.price}
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
+              <div className="p-6">
+                <h3 className="font-heading text-lg font-semibold text-primary group-hover:text-hover transition-colors duration-300">
+                  {item.name}
+                </h3>
+                <p className="mt-2 text-sm text-muted font-body font-light leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Footer note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        {/* CTA — Ver carta completa */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-center mt-14 text-sm text-muted/60 font-body font-light"
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center mt-16"
         >
-          Precios en CLP. Menú sujeto a disponibilidad de temporada.
-        </motion.p>
+          <Link
+            href="/carta"
+            className="group inline-flex items-center gap-2 px-10 py-4 bg-accent text-white font-body font-medium rounded-full hover:bg-hover transition-all duration-300 shadow-[0_8px_30px_rgba(232,154,174,0.35)] hover:shadow-[0_12px_40px_rgba(185,122,86,0.35)] hover:-translate-y-0.5 text-base"
+          >
+            Ver carta completa
+            <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">
+              →
+            </span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
