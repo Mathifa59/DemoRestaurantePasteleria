@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Read(//c/Users/Usuario/**)",
+      "Bash(npx create-next-app@latest demo-pasteleria-tmp --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Bash(cp -r \"C:/Users/Usuario/demo-pasteleria-tmp/\"* \"C:/Users/Usuario/DemoPasteleria/\")",
+      "Bash(cp -r \"C:/Users/Usuario/demo-pasteleria-tmp/\".* \"C:/Users/Usuario/DemoPasteleria/\")",
+      "Bash(rm -rf \"C:/Users/Usuario/demo-pasteleria-tmp\")",
+      "Bash(cp -f package.json package-lock.json postcss.config.mjs tsconfig.json \"C:/Users/Usuario/DemoPasteleria/\")",
+      "Bash(cp -rf src public \"C:/Users/Usuario/DemoPasteleria/\")",
+      "Bash(npm install:*)",
+      "Bash(npx next:*)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => k.match\\(/insta|faceb|mail|leaf|sparkle/i\\)\\).sort\\(\\); console.log\\(names\\);\")",
+      "Bash(taskkill //F //IM node.exe)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

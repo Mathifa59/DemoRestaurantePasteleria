@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #FFF6EE;
+  --color-foreground: #8B5E4A;
+  --color-primary: #8B5E4A;
+  --color-accent: #E89AAE;
+  --color-hover: #B97A56;
+  --color-card: #F6D6DE;
+  --color-warm: #F4C7A1;
+  --color-delicate: #F8E7B5;
+  --color-muted: #7A6F6A;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFF6EE;
+  color: #8B5E4A;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+::selection {
+  background-color: #F6D6DE;
+  color: #8B5E4A;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF6EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E89AAE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B97A56;
+}
