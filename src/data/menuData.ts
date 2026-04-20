@@ -44,7 +44,7 @@ const img = {
   chocoSlice: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=75",
   berrySlice: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=75",
   carrotCake: "https://images.unsplash.com/photo-1621955511667-e2c316e4575d?w=500&q=75",
-  pistachio: "https://images.unsplash.com/photo-1519869325930-281384f7f637?w=500&q=75",
+  pistachio: "https://images.unsplash.com/photo-1509461399763-ae67a981b254?w=500&q=75",
   milhojas: "https://images.unsplash.com/photo-1509461399763-ae67a981b254?w=500&q=75",
   tartFresa: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=75",
   eclair: "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=500&q=75",

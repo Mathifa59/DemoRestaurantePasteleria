@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-28 lg:py-36 bg-white/50">
+    <section id="about" className="py-16 lg:py-20 bg-white/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image side — editorial layout */}
@@ -16,7 +16,7 @@ export default function About() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(139,94,74,0.12)]">
+            <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(139,94,74,0.12)]">
               <Image
                 src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=800&q=80"
                 alt="Chef pastelera trabajando"

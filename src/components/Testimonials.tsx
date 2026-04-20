@@ -43,7 +43,7 @@ const itemVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="py-28 lg:py-36 bg-background">
+    <section className="py-12 lg:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -51,7 +51,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="inline-block text-xs font-body font-medium tracking-[0.3em] uppercase text-accent mb-4">
             Testimonios

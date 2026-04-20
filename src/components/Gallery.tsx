@@ -58,7 +58,7 @@ const itemVariants = {
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-28 lg:py-36 bg-white/50">
+    <section id="gallery" className="py-12 lg:py-16 bg-white/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -66,7 +66,7 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="inline-block text-xs font-body font-medium tracking-[0.3em] uppercase text-accent mb-4">
             Visual

@@ -29,7 +29,7 @@ const itemVariants = {
 
 export default function MenuPreview() {
   return (
-    <section id="menu" className="py-28 lg:py-36 bg-background">
+    <section id="menu" className="py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -37,7 +37,7 @@ export default function MenuPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="inline-block text-xs font-body font-medium tracking-[0.3em] uppercase text-accent mb-4">
             La Carta
@@ -58,7 +58,7 @@ export default function MenuPreview() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
         >
           {previewItems.map((item) => (
             <motion.article
@@ -74,7 +74,7 @@ export default function MenuPreview() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
 
                 {item.highlightLabel && (
                   <div className="absolute top-4 left-4">

@@ -6,32 +6,32 @@ import { Star, Sparkles } from "lucide-react";
 
 const desserts = [
   {
-    name: "Tarte Framboise Royale",
-    description: "Tartaleta de frambuesa con crema de vainilla de Madagascar y masa sablée.",
-    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80",
-    tag: "Best Seller",
-    price: "$12.500",
+    name: "Torta de frutos rojos y vainilla",
+    description: "Bizcocho suave de vainilla, crema ligera y compota de frutos rojos frescos.",
+    image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80",
+    tag: "Más vendida",
+    price: "S/ 118",
   },
   {
-    name: "Opéra Classique",
-    description: "Capas de bizcocho joconde, ganache de chocolate y crema de café.",
+    name: "Torta de chocolate belga",
+    description: "Capas de bizcocho intenso de cacao con ganache sedosa y acabado brillante.",
     image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
-    tag: "Chef's Creation",
-    price: "$14.800",
+    tag: "Creación del chef",
+    price: "S/ 124",
   },
   {
-    name: "Éclair Caramel Beurre Salé",
-    description: "Éclair relleno de crema de caramelo salado con glaseado espejo.",
-    image: "https://images.unsplash.com/photo-1509461399763-ae67a981b254?w=800&q=80",
-    tag: "Best Seller",
-    price: "$8.900",
+    name: "Cheesecake de maracuyá",
+    description: "Cremoso cheesecake horneado con cobertura de maracuyá y base crocante de mantequilla.",
+    image: "https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=800&q=80",
+    tag: "Favorito",
+    price: "S/ 112",
   },
   {
-    name: "Entremet Passion & Coco",
-    description: "Mousse de maracuyá, insert de coco y base crujiente de almendras.",
-    image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80",
-    tag: "Chef's Creation",
-    price: "$16.200",
+    name: "Box de 6 macarons",
+    description: "Sabores surtidos: vainilla, frambuesa, pistacho, chocolate, limón y café.",
+    image: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=800&q=80",
+    tag: "Más vendida",
+    price: "S/ 32",
   },
 ];
 
@@ -55,7 +55,7 @@ const itemVariants = {
 
 export default function SignatureDesserts() {
   return (
-    <section id="desserts" className="py-28 lg:py-36 bg-background">
+    <section id="desserts" className="py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -63,7 +63,7 @@ export default function SignatureDesserts() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="inline-block text-xs font-body font-medium tracking-[0.3em] uppercase text-accent mb-4">
             Nuestras Estrellas
@@ -102,12 +102,12 @@ export default function SignatureDesserts() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
 
                 {/* Tag */}
                 <div className="absolute top-5 left-5">
                   <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-xs font-body font-medium text-primary">
-                    {dessert.tag === "Best Seller" ? (
+                    {dessert.tag === "Más vendida" ? (
                       <Star size={12} className="text-warm fill-warm" />
                     ) : (
                       <Sparkles size={12} className="text-accent" />

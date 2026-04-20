@@ -7,10 +7,10 @@ export default function OrderCTA() {
   return (
     <section
       id="order"
-      className="py-28 lg:py-36 relative overflow-hidden"
+      className="py-16 lg:py-20 relative overflow-hidden"
     >
       {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#7A5240] to-[#6B4535]" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary via-[#7A5240] to-[#6B4535]" />
       <div className="absolute inset-0 opacity-10">
         <div
           className="w-full h-full"

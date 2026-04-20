@@ -19,8 +19,8 @@ export default function Hero() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF6EE]/95 via-[#FFF6EE]/80 to-[#FFF6EE]/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FFF6EE] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -43,7 +43,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold text-primary leading-[1.05] tracking-tight"
+            className="font-heading text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-semibold text-primary leading-[1.05] tracking-tight"
           >
             Donde el arte
             <br />
@@ -67,7 +67,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="mt-12 flex flex-wrap gap-4"
+            className="mt-12 flex flex-col sm:flex-row flex-wrap gap-4"
           >
             <a
               href="#order"
@@ -91,7 +91,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="mt-20 flex gap-12"
+            className="mt-20 flex flex-wrap gap-8 sm:gap-12"
           >
             {[
               { number: "12+", label: "Años de experiencia" },

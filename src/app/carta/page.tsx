@@ -118,7 +118,7 @@ export default function CartaPage() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5"
+                className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5"
               >
                 {filteredItems.map((item) => (
                   <motion.article
